@@ -13,17 +13,31 @@ def welcome_message():
     print(f"Hi {player_name}, ready to play the game?")
 
 
+def check_guess(player_guess):
+    """
+    Check player guess against computer guess and display message to the user
+    about whether their next guess should be higher or lower
+    """
+    while computer_guess != player_guess:
+        if player_guess < computer_guess:
+            print("Unlucky! The correct answer is Higher")
+            player_guess = int(input("Please choose another number:"))
+        elif player_guess > computer_guess:
+            print("Unlucky! The correct answer is Lower")
+            player_guess = int(input("Please choose another number:"))
+        else:
+            break
+    print("Congratulations, you win!")
+
+
 welcome_message()
 
 computer_guess = random.randrange(1, 100)
-player_guess = int(input("Please choose a number between 1 and 100:"))
-while computer_guess != player_guess:
-    if player_guess < computer_guess:
-        print("Unlucky! The correct answer is Higher")
-        player_guess = int(input("Please choose another number:"))
-    elif player_guess > computer_guess:
-        print("Unlucky! The correct answer is Lower")
-        player_guess = int(input("Please choose another number:"))
-    else:
-        break
-print("Congratulations, you win!")
+
+try:
+    player_guess = int(input("Please choose a number between 1 and 100:"))
+    check_guess(player_guess)
+except ValueError:
+    print("Invalid data: Your guess must be a number")
+    player_guess = int(input("Please choose a number between 1 and 100:"))
+    check_guess(player_guess)
