@@ -1,6 +1,10 @@
 import random
 
 
+max_num_guesses = 5
+player_guesses = 0
+
+
 def welcome_message():
     """
     Displays welcome message to the user
@@ -30,9 +34,9 @@ def check_guess(player_guess):
     Check player guess against computer guess and display message to the user
     about whether their next guess should be higher or lower
     """
-    if player_guess < computer_guess:
+    if player_guess < target_number:
         print("Unlucky! The correct answer is Higher")
-    elif player_guess > computer_guess:
+    elif player_guess > target_number:
         print("Unlucky! The correct answer is Lower")
     else:
         print("Congratulations, you win!")
@@ -40,8 +44,10 @@ def check_guess(player_guess):
 
 welcome_message()
 
-computer_guess = random.randrange(1, 100)
+target_number = random.randrange(1, 100)
 
-player_guess = get_player_guess()
-check_guess(player_guess)
+while player_guesses < max_num_guesses:
+    player_guess = get_player_guess()
+    player_guesses = player_guesses + 1
+    check_guess(player_guess)
 
