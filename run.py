@@ -14,12 +14,15 @@ def welcome_message():
 
 
 def get_player_guess():
+    """
+    Requests player input and returns it, if it is an integer
+    Displays invalid data message if not an integer
+    """
     try:
         player_guess = int(input("Please choose a number between 1 and 100:"))
+        return player_guess
     except ValueError:
         print("Invalid data: Your guess must be a number")
-        player_guess = int(input("Please choose a number between 1 and 100:"))
-    return player_guess
 
 
 def check_guess(player_guess):
@@ -27,14 +30,12 @@ def check_guess(player_guess):
     Check player guess against computer guess and display message to the user
     about whether their next guess should be higher or lower
     """
-    while computer_guess != player_guess:
-        if player_guess < computer_guess:
-            print("Unlucky! The correct answer is Higher")
-        elif player_guess > computer_guess:
-            print("Unlucky! The correct answer is Lower")
-        else:
-            break
-    print("Congratulations, you win!")
+    if player_guess < computer_guess:
+        print("Unlucky! The correct answer is Higher")
+    elif player_guess > computer_guess:
+        print("Unlucky! The correct answer is Lower")
+    else:
+        print("Congratulations, you win!")
 
 
 welcome_message()
@@ -42,7 +43,5 @@ welcome_message()
 computer_guess = random.randrange(1, 100)
 
 player_guess = get_player_guess()
+check_guess(player_guess)
 
-
-# if player_guess > 100:
-# # raise ValueError("Invalid data: you must choose a number less than 100")
