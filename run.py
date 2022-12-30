@@ -30,6 +30,14 @@ def get_player_guess():
         return 0
 
 
+def validate_range(player_guess):
+    if player_guess < 1 or player_guess > 100:
+        print("Number must be between 1 and 100")
+        return False
+    else:
+        return True
+
+
 def check_guess(player_guess):
     """
     Check player guess against computer guess and display message to the user
@@ -49,6 +57,8 @@ target_number = random.randrange(1, 100)
 
 while player_guesses < max_num_guesses:
     player_guess = get_player_guess()
-    player_guesses = player_guesses + 1
-    check_guess(player_guess)
+    guess_in_range = validate_range(player_guess)
+    if guess_in_range == True:
+        player_guesses = player_guesses + 1
+        check_guess(player_guess)
 
