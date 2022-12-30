@@ -6,6 +6,7 @@ import random
 
 MAX_NUM_GUESSES = 5
 PLAYER_GUESSES = 0
+target_number_guessed = False
 
 
 def welcome_message():
@@ -44,7 +45,7 @@ def validate_range(player_guess_to_validate):
         return True
 
 
-def check_guess(player_guess_to_check):
+def check_guess(player_guess_to_check, check_if_number_guessed):
     """
     Check player guess against computer guess and display message to the user
     about whether their next guess should be higher or lower
@@ -54,7 +55,9 @@ def check_guess(player_guess_to_check):
     elif player_guess_to_check > target_number:
         print("Unlucky! The correct answer is Lower")
     else:
+        check_if_number_guessed = True
         print("Congratulations, you win!")
+    return check_if_number_guessed
 
 
 welcome_message()
@@ -62,8 +65,10 @@ welcome_message()
 target_number = random.randrange(1, 100)
 
 while PLAYER_GUESSES < MAX_NUM_GUESSES:
+    if target_number_guessed is True:
+        break
     player_guess = get_player_guess()
     GUESS_IN_RANGE = validate_range(player_guess)
     if GUESS_IN_RANGE is True:
         PLAYER_GUESSES = PLAYER_GUESSES + 1
-        check_guess(player_guess)
+        target_number_guessed = check_guess(player_guess, target_number_guessed)
