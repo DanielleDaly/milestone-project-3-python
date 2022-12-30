@@ -4,9 +4,38 @@ import random for generating random numbers
 import random
 
 
-MAX_NUM_GUESSES = 5
-PLAYER_GUESSES = 0
-target_number_guessed = False
+class GameStatus:
+    """
+    Sets and displays number of guesses taken and remaining in game
+    """
+    def __init__(self, incorrect, correct, max):
+        self.incorrect = incorrect
+        self.correct = correct
+        self.max = max
+
+    def add_incorrect_guess(self):
+        """
+        Function to increment incorrect guesses
+        """
+        self.incorrect = self.incorrect + 1
+        
+    def add_correct_guess(self):
+        """
+        Function to set correct to true when number is guessed correctly
+        """
+        self.correct = True
+
+    def display_game(self):
+        """
+        Function to display current game status
+        """
+        print("********************")
+        print("Remaining Guesses")
+
+        for x in range(self.max - self.incorrect):
+            print("X")
+
+        print("********************")
 
 
 def welcome_message():
@@ -59,9 +88,14 @@ def check_guess(player_guess_to_check, check_if_number_guessed):
     return check_if_number_guessed
 
 
-welcome_message()
-
+MAX_NUM_GUESSES = 5
+PLAYER_GUESSES = 0
+target_number_guessed = False
 target_number = random.randrange(1, 100)
+game_status_display = GameStatus(PLAYER_GUESSES, False, MAX_NUM_GUESSES)
+
+
+welcome_message()
 
 while PLAYER_GUESSES < MAX_NUM_GUESSES:
     if target_number_guessed is True:
@@ -71,6 +105,12 @@ while PLAYER_GUESSES < MAX_NUM_GUESSES:
     if GUESS_IN_RANGE is True:
         PLAYER_GUESSES = PLAYER_GUESSES + 1
         target_number_guessed = check_guess(player_guess, target_number_guessed)
+        if target_number_guessed is False:
+            game_status_display.add_incorrect_guess()
+        else:
+            game_status_display.add_correct_guess()
+        game_status_display.display_game()
+
 
 print("*** GAME OVER ***")
 if target_number_guessed is True:
