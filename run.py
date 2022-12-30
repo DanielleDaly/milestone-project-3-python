@@ -56,7 +56,6 @@ def check_guess(player_guess_to_check, check_if_number_guessed):
         print("Unlucky! The correct answer is Lower")
     else:
         check_if_number_guessed = True
-        print("Congratulations, you win!")
     return check_if_number_guessed
 
 
@@ -72,3 +71,10 @@ while PLAYER_GUESSES < MAX_NUM_GUESSES:
     if GUESS_IN_RANGE is True:
         PLAYER_GUESSES = PLAYER_GUESSES + 1
         target_number_guessed = check_guess(player_guess, target_number_guessed)
+
+print("*** GAME OVER ***")
+if target_number_guessed is True:
+    print("Congratulations, you win!")
+else:
+    print("You lose!")
+print(f"The correct number was {target_number}")
