@@ -1,8 +1,11 @@
+"""
+import random for generating random numbers
+"""
 import random
 
 
-max_num_guesses = 5
-player_guesses = 0
+MAX_NUM_GUESSES = 5
+PLAYER_GUESSES = 0
 
 
 def welcome_message():
@@ -23,29 +26,32 @@ def get_player_guess():
     Displays invalid data message if not an integer
     """
     try:
-        player_guess = int(input("Please choose a number between 1 and 100:"))
-        return player_guess
+        player_guess_input = int(input("Please choose a number between 1 and 100:"))
+        return player_guess_input
     except ValueError:
         print("Invalid data: Your guess must be a number")
         return 0
 
 
-def validate_range(player_guess):
-    if player_guess < 1 or player_guess > 100:
+def validate_range(player_guess_to_validate):
+    """
+    Check that player guess is within required range
+    """
+    if player_guess_to_validate < 1 or player_guess_to_validate > 100:
         print("Number must be between 1 and 100")
         return False
     else:
         return True
 
 
-def check_guess(player_guess):
+def check_guess(player_guess_to_check):
     """
     Check player guess against computer guess and display message to the user
     about whether their next guess should be higher or lower
     """
-    if player_guess < target_number:
+    if player_guess_to_check < target_number:
         print("Unlucky! The correct answer is Higher")
-    elif player_guess > target_number:
+    elif player_guess_to_check > target_number:
         print("Unlucky! The correct answer is Lower")
     else:
         print("Congratulations, you win!")
@@ -55,10 +61,9 @@ welcome_message()
 
 target_number = random.randrange(1, 100)
 
-while player_guesses < max_num_guesses:
+while PLAYER_GUESSES < MAX_NUM_GUESSES:
     player_guess = get_player_guess()
-    guess_in_range = validate_range(player_guess)
-    if guess_in_range is True:
-        player_guesses = player_guesses + 1
+    GUESS_IN_RANGE = validate_range(player_guess)
+    if GUESS_IN_RANGE is True:
+        PLAYER_GUESSES = PLAYER_GUESSES + 1
         check_guess(player_guess)
-
