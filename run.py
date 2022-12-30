@@ -58,7 +58,7 @@ target_number = random.randrange(1, 100)
 while player_guesses < max_num_guesses:
     player_guess = get_player_guess()
     guess_in_range = validate_range(player_guess)
-    if guess_in_range == True:
+    if guess_in_range is True:
         player_guesses = player_guesses + 1
         check_guess(player_guess)
 
