@@ -27,6 +27,7 @@ def get_player_guess():
         return player_guess
     except ValueError:
         print("Invalid data: Your guess must be a number")
+        return 0
 
 
 def check_guess(player_guess):
