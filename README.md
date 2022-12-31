@@ -103,22 +103,106 @@ Message displayed once name has been entered: ""
 
 ### Python Random Library
 
+- The Python random library is imported and used to generate the target numeber that the user tries to guess
+
 ### Accept user input
 
+- The application allows the user to enter a number which will be used as their guess. They can enter a guess up to 5 times. If after 5 guesses they have not chosen the correct number they lose the game. These guesses are then validated. 
+
+- User input is also accepted in the form of a username/ player name that can be entered by the user
+ 
 ### Input validation and error checking
 
-### Display relevamt messaging for Correct and Incorrect guesses
+**Validation for checking user input is an integer**
 
-### Hints for Incorrect Guesses
+- Once a guess is entered by the user it is validated. There are a number of checks to ensure that the correct information has been entered.
+
+- The input is checked to ensure that an integer is chosen. If the user enters a guess that is not an integer this guess is not accepted and an error message will display. This entry will not count towards the users 5 guesses. 
+- Error message: ""
+
+Screen shot below of user attempting to enter a number with a decimal point
+(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+
+Screen shot below of user attempting to enter a string
+(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+
+Screen shot below of user attempting to enter a negative number
+(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+
+**Validation to check if the user input is within the specified range**
+
+- The input is also validated to ensure that the user does not enter a number that falls outside the range. The range for this game is between 1 and 100. If the user inputs a number outside of this range, an error message will display. This entry will not count towards the users 5 guesses. 
+
+- Error message: ""
+
+Screen shot below of user attempting to enter a number above the maximum number 100
+(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+
+Screen shot below of user attempting to enter a number below the minimum number 1
+(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+
+**Validation for an empty input**
+
+- If the user presses the enter key without inputting any data, an error message will display. This entry will not count towards the users 5 guesses. 
+
+ Error message: ""
+
+Screen shot below of user making a guess with empty input
+(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+
+
+### Display Hints for Incorrect Guesses - Higher or Lower
+
+- Once a user has made a guess it will be checked against the target number. If the user guess is lower than the target number, a message will be displayed to advise the user that their guess was too low so that they will know that they should choose a number with a higher value when making their next guess. 
+
+- Message displayed if guess is lower than the target number: ""
+
+Screenshot of message in the terminal when user guess is lower than the target number
+(**INSERT SCREEN SHOT OF MESSAGE - TOO low**)
+
+- If the user guess is higher than the target number, a message will be displayed to advise the user that their guess was too high so that they will know that they should choose a number with a lower value when making their next guess.
+
+- Message displayed if guess is higher than the target number: ""
+
+Screenshot of message in the terminal when user guess is higher than the target number
+(**INSERT SCREEN SHOT OF MESSAGE - TOO HIGH**)
+
 
 ### Display Remaining Guesses
 
+- In each game the user can make 5 guesses to try to guess the correct number. These are displayed on screen with an 'X'. for example, if there are 3 remaining guesses, 3 x's will be displayed on the screen.  As each guess is taken, the number of remaining guesses will decrease. Text is displayed above advising that the x's re[resent remaining guesses.
+(**INSERT SCREEN SHOT OF MESSAGE - REMAINING GUESSES REPRESENTED BY X**)
+
+
 ### Winning/ Losing Message
+
+
+Once the user inputs a guess, the guess is checked to see if this guess matches the target guess. 
+
+- If the guess is correct a winning message is displayed on the screen. This message advises the user that they have won. It displays the username that was entered by the user at the beginning and confirms what the correct number was. 
+
+
+Winning Message:""
+
+(**INSERT SCREENSHOT OF WINNING MESSAGE**)
+
+- If the user has not guessed the correct answer after 5 guesses they lose the game. A message is displayed to advise the user that they have lost the game. It displays the username that was entered by the user at the beginning and confirms what the correct number was. 
+
+Losing Message:""
+
+(**INSERT SCREENSHOT OF LOSING MESSAGE**)
 
 ### Game Over Message
 
+- If the user has entered 5 incorrect guesses, they lose the game. Once the game has been lost a game over message is displayed. 
+
+Game Over Message: ""
+
+(**INSERT SCREENSHOT OF GAME OVER MESSAGE**)
+
 ### Data Maintained in Class Instances
 
+- The game status is maintained within a game status class and by calling the functions within the class (add function names here) the status of the game is maintained and displayed tp the user.
 
 
 
