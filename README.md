@@ -95,12 +95,12 @@ Play game instructions:
 
 ### Allow User to enter Username
 
-Below the welcome message a prompt is displayed for the user to enter a username. This username is displayed in a personalised message to the user once a username has been provided. The username may contain letters, numbers or a mixture of both. The player name / username has not been limited to strings to enable the user to enter whatever name they choose as they might wnat to use something other than their name for the game. 
+Below the welcome message a prompt is displayed for the user to enter a username. This username is displayed in a personalised message to the user once a username has been provided. The username may contain letters, numbers or a mixture of both. The player name / username has not been limited to strings to enable the user to enter whatever name they choose as they might want to use something other than their name for the game. 
 Message displayed once name has been entered: ""
 
 ### Python Random Library
 
-- The Python random library is imported and used to generate the target numeber that the user tries to guess
+- The Python random library is imported and used to generate the target number that the user tries to guess
 
 ### Accept user input
 
@@ -167,7 +167,7 @@ Screenshot of message in the terminal when user guess is higher than the target 
 
 ### Display Remaining Guesses
 
-- In each game the user can make 5 guesses to try to guess the correct number. These are displayed on screen with an 'X'. for example, if there are 3 remaining guesses, 3 x's will be displayed on the screen.  As each guess is taken, the number of remaining guesses will decrease. Text is displayed above advising that the x's re[resent remaining guesses.
+- In each game the user can make 5 guesses to try to guess the correct number. These are displayed on screen with an 'X'. For example, if there are 3 remaining guesses, 3 x's will be displayed on the screen.  As each guess is taken, the number of remaining guesses will decrease. Text is displayed above advising that the x's represent remaining guesses.
 (**INSERT SCREEN SHOT OF MESSAGE - REMAINING GUESSES REPRESENTED BY X**)
 
 
@@ -249,9 +249,11 @@ In future I would like to add some additional features to this game:
 
 ## Bugs
 
-## Remaining Bugs
+### Solved bugs
 
-## Validator Testing
+The following bugs were found when testing:
+
+### Remaining Bugs
 
 ## Deployment
 
