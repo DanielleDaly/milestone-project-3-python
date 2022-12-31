@@ -12,9 +12,6 @@ The main function of this game is to provide the user with a simple number guess
 
 ## How to play the Game
 
-
-
-
 View the live project here: (**INSERT LIVE LINK HERE**)
 
 
@@ -216,6 +213,48 @@ In future I would like to add some additional features to this game:
 3. I would also like to add the option for the user to restart the game immediately after finishing a game without having to run the program again. With the way the game is currently coded, it would require a restructure of the existing code to move all of the game functionality within a class and a new instance of the class would be called to re-start the game.
 
 
+## Testing:
 
+### Functionality & Features
+
+- I played the game numerous times and confirmed that the game runs correctly
+
+- I confirmed that the number of guesses increment correctly.
+
+- I confirmed that the numeber of remaining guesses decreases correctly.
+
+- I confirmed that the number of guesses remaining displays on the screen.
+
+- I confirmed that the welcome message displays correctly.
+
+- I confirmed that the user's name is displayed as entered. 
+ 
+- I confirmed that the game ends after 5 incorrect guesses. 
+
+- I confirmed incorrectly entered input is not counted as part of hte users 5 guesses. 
+
+- I confirmed that a message displays after each user guess to confirm if their guess was too high or too low when compared to the target number. 
+
+- I confirmed the winning message displays correctly.
+
+- I confirmed the losing message displays correctly. 
+
+- I confimed the user validation works as expected:
+
+### Validator Testing
+
+- I tested my Python code in PEP8online.com and no errors were returned. 
+
+(**ENTER SCREENSHOT OF PEP8**)
+
+## Bugs
+
+## Remaining Bugs
+
+## Validator Testing
+
+## Deployment
+
+## Credits
 
 
