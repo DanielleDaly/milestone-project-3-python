@@ -205,7 +205,15 @@ Game Over Message: ""
 - The game status is maintained within a game status class and by calling the functions within the class (add function names here) the status of the game is maintained and displayed tp the user.
 
 
+## Future Features
 
+In future I would like to add some additional features to this game:
+
+1. I would like to make it possible for the user to select different levels of difficulty before beginning to play the game. The user would be able to choose from Easy, Intermediate or Difficult. As the levels become more difficult the range of numbers could increase and/ or the number of available guesses could decrease as the levels go from easy to difficult. 
+
+2. I would also like to ask the user if they want hints to be included when playing the game or not. Currently these are displayed and the user does not have a choice. I would like to add this in as a feature in future where users would be able to choose if the want hints or not which would make the numerbs guessing game more challenging. 
+
+3. I would also like to add the option for the user to restart the game immediately after finishing a game without having to run the program again. With the way the game is currently coded, it would require a restructure of the existing code to move all of the game functionality within a class and a new instance of the class would be called to re-start the game.
 
 
 
