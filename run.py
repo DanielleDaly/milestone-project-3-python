@@ -38,7 +38,7 @@ class GameStatus:
         print("********************")
 
 
-def welcome_message():
+def welcome_message(player_name):
     """
     Displays welcome message to the user
     """
@@ -46,8 +46,9 @@ def welcome_message():
     print("Please choose a number between 1 and 100")
     print("You have 5 chances to guess the correct answer\n")
 
-    player_name = input("Please enter your name:\n")
+    inputted_player_name = input("Please enter your name:\n")
     print(f"Hi {player_name}, ready to play the game?")
+    return inputted_player_name
 
 
 def get_player_guess():
@@ -56,7 +57,7 @@ def get_player_guess():
     Displays invalid data message if not an integer
     """
     try:
-        player_guess_input = int(input("Please choose a number between 1 and 100:"))
+        player_guess_input = int(input("Please choose a number between 1 and 100:\n"))
         return player_guess_input
     except ValueError:
         print("Invalid data: Your guess must be a number")
@@ -81,7 +82,8 @@ def validate_unique_guess(player_guess_to_validate, player_previous_guesses):
     is_unique_guess = False
     if player_guess_to_validate in player_previous_guesses:
         print("Guess already in list of previous guesses")
-        print("Please enter another number between 1 and 100")
+        print(f"Your previous guesses were: {player_previous_guesses}")
+        print("Please try again")
     else:
         player_previous_guesses.append(player_guess_to_validate)
         is_unique_guess = True
@@ -102,6 +104,7 @@ def check_guess(player_guess_to_check, check_if_number_guessed):
     return check_if_number_guessed
 
 
+player_name = ""
 MAX_NUM_GUESSES = 5
 player_guesses = 0
 target_number_guessed = False
@@ -110,7 +113,7 @@ target_number = random.randrange(1, 100)
 game_status_display = GameStatus(player_guesses, False, MAX_NUM_GUESSES)
 
 
-welcome_message()
+player_name = welcome_message(player_name)
 
 while player_guesses < MAX_NUM_GUESSES:
     if target_number_guessed is True:
@@ -128,9 +131,10 @@ while player_guesses < MAX_NUM_GUESSES:
         game_status_display.display_game()
 
 
-print("*** GAME OVER ***")
+print("***  GAME OVER!  ***")
+print("********************")
 if target_number_guessed is True:
-    print("Congratulations, you win!")
+    print(f"Congratulations {player_name}, you win!")
 else:
-    print("You lose!")
+    print(f"You lose {player_name}!")
 print(f"The correct number was {target_number}")
