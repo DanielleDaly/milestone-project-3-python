@@ -29,25 +29,26 @@ class GameStatus:
         """
         Function to display current game status
         """
-        print("********************")
+        print("====================")
         print("Remaining Guesses")
+        print("====================")
 
         for x in range(self.max_guesses - self.incorrect):
             print("X")
 
-        print("********************")
+        print("====================\n")
 
 
-def welcome_message(player_name):
+def welcome_message():
     """
     Displays welcome message to the user
     """
     print("Welcome!")
-    print("Please choose a number between 1 and 100")
+    print("To play the game, choose a number between 1 and 100")
     print("You have 5 chances to guess the target number\n")
 
     inputted_player_name = input("Please enter your name:\n")
-    print(f"Hi {player_name}, ready to play the game?")
+    print(f"Hi {inputted_player_name}, let's play the game!")
     return inputted_player_name
 
 
@@ -60,7 +61,7 @@ def get_player_guess():
         player_guess_input = int(input("Please choose a number between 1 and 100 (or 999 to exit):\n"))
         return player_guess_input
     except ValueError:
-        print("Invalid data: Your guess must be a number")
+        print("Invalid input. Your guess must be a number")
         return 0
 
 
@@ -83,7 +84,7 @@ def validate_unique_guess(player_guess_to_validate, player_previous_guesses):
     if player_guess_to_validate in player_previous_guesses:
         print("Guess already in list of previous guesses")
         print(f"Your previous guesses were: {player_previous_guesses}")
-        print("Please try again")
+        print("Please try again\n")
     else:
         player_previous_guesses.append(player_guess_to_validate)
         is_unique_guess = True
@@ -96,15 +97,14 @@ def check_guess(player_guess_to_check, check_if_number_guessed):
     about whether their next guess should be higher or lower
     """
     if player_guess_to_check < target_number:
-        print("Unlucky! The correct answer is Higher")
+        print("Unlucky! The correct answer is Higher\n")
     elif player_guess_to_check > target_number:
-        print("Unlucky! The correct answer is Lower")
+        print("Unlucky! The correct answer is Lower\n")
     else:
         check_if_number_guessed = True
     return check_if_number_guessed
 
 
-player_name = ""
 MAX_NUM_GUESSES = 5
 player_guesses = 0
 target_number_guessed = False
@@ -113,7 +113,9 @@ target_number = random.randrange(1, 100)
 game_status_display = GameStatus(player_guesses, False, MAX_NUM_GUESSES)
 
 
-player_name = welcome_message(player_name)
+player_name = welcome_message()
+
+game_status_display.display_game()
 
 while player_guesses < MAX_NUM_GUESSES:
     if target_number_guessed is True:
@@ -140,8 +142,9 @@ while player_guesses < MAX_NUM_GUESSES:
         game_status_display.display_game()
 
 
-print("***  GAME OVER!  ***")
-print("********************")
+print("====================")
+print("===  GAME OVER!  ===")
+print("====================")
 if target_number_guessed is True:
     print(f"Congratulations {player_name}, you win!")
 else:
