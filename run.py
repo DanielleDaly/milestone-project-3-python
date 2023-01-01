@@ -44,7 +44,7 @@ def welcome_message(player_name):
     """
     print("Welcome!")
     print("Please choose a number between 1 and 100")
-    print("You have 5 chances to guess the correct answer\n")
+    print("You have 5 chances to guess the target number\n")
 
     inputted_player_name = input("Please enter your name:\n")
     print(f"Hi {player_name}, ready to play the game?")
@@ -57,7 +57,7 @@ def get_player_guess():
     Displays invalid data message if not an integer
     """
     try:
-        player_guess_input = int(input("Please choose a number between 1 and 100:\n"))
+        player_guess_input = int(input("Please choose a number between 1 and 100 (or 999 to exit):\n"))
         return player_guess_input
     except ValueError:
         print("Invalid data: Your guess must be a number")
@@ -92,7 +92,7 @@ def validate_unique_guess(player_guess_to_validate, player_previous_guesses):
 
 def check_guess(player_guess_to_check, check_if_number_guessed):
     """
-    Check player guess against computer guess and display message to the user
+    Check player guess against target number and display message to the user
     about whether their next guess should be higher or lower
     """
     if player_guess_to_check < target_number:
@@ -118,16 +118,25 @@ player_name = welcome_message(player_name)
 while player_guesses < MAX_NUM_GUESSES:
     if target_number_guessed is True:
         break
+
     player_guess = get_player_guess()
+
+    if player_guess == 999:
+        break
+
     GUESS_IN_RANGE = validate_range(player_guess)
     GUESS_IS_UNIQUE = validate_unique_guess(player_guess, previous_guesses)
+
     if GUESS_IN_RANGE is True and GUESS_IS_UNIQUE is True:
         player_guesses = player_guesses + 1
+
         target_number_guessed = check_guess(player_guess, target_number_guessed)
+
         if target_number_guessed is False:
             game_status_display.add_incorrect_guess()
         else:
             game_status_display.add_correct_guess()
+
         game_status_display.display_game()
 
 
