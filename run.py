@@ -8,17 +8,17 @@ class GameStatus:
     """
     Sets and displays number of guesses taken and remaining in game
     """
-    def __init__(self, incorrect, correct, max):
+    def __init__(self, incorrect, correct, max_guesses):
         self.incorrect = incorrect
         self.correct = correct
-        self.max = max
+        self.max_guesses = max_guesses
 
     def add_incorrect_guess(self):
         """
         Function to increment incorrect guesses
         """
         self.incorrect = self.incorrect + 1
-        
+
     def add_correct_guess(self):
         """
         Function to set correct to true when number is guessed correctly
@@ -32,7 +32,7 @@ class GameStatus:
         print("********************")
         print("Remaining Guesses")
 
-        for x in range(self.max - self.incorrect):
+        for x in range(self.max_guesses - self.incorrect):
             print("X")
 
         print("********************")
@@ -74,6 +74,20 @@ def validate_range(player_guess_to_validate):
         return True
 
 
+def validate_unique_guess(player_guess_to_validate, player_previous_guesses):
+    """
+    Check if the current guess is in the list of previous guesses
+    """
+    is_unique_guess = False
+    if player_guess_to_validate in player_previous_guesses:
+        print("Guess already in list of previous guesses")
+        print("Please enter another number between 1 and 100")
+    else:
+        player_previous_guesses.append(player_guess_to_validate)
+        is_unique_guess = True
+    return is_unique_guess
+
+
 def check_guess(player_guess_to_check, check_if_number_guessed):
     """
     Check player guess against computer guess and display message to the user
@@ -89,21 +103,23 @@ def check_guess(player_guess_to_check, check_if_number_guessed):
 
 
 MAX_NUM_GUESSES = 5
-PLAYER_GUESSES = 0
+player_guesses = 0
 target_number_guessed = False
+previous_guesses = []
 target_number = random.randrange(1, 100)
-game_status_display = GameStatus(PLAYER_GUESSES, False, MAX_NUM_GUESSES)
+game_status_display = GameStatus(player_guesses, False, MAX_NUM_GUESSES)
 
 
 welcome_message()
 
-while PLAYER_GUESSES < MAX_NUM_GUESSES:
+while player_guesses < MAX_NUM_GUESSES:
     if target_number_guessed is True:
         break
     player_guess = get_player_guess()
     GUESS_IN_RANGE = validate_range(player_guess)
-    if GUESS_IN_RANGE is True:
-        PLAYER_GUESSES = PLAYER_GUESSES + 1
+    GUESS_IS_UNIQUE = validate_unique_guess(player_guess, previous_guesses)
+    if GUESS_IN_RANGE is True and GUESS_IS_UNIQUE is True:
+        player_guesses = player_guesses + 1
         target_number_guessed = check_guess(player_guess, target_number_guessed)
         if target_number_guessed is False:
             game_status_display.add_incorrect_guess()
