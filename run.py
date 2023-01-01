@@ -1,38 +1,45 @@
 """
-import random for generating random numbers
+Use import random for generating random number for the target number
+in the game
 """
 import random
 
 
 class GameStatus:
     """
-    Sets and displays number of guesses taken and remaining in game
+    Maintains the number of incorrect guesses made
+    Maintains True/False for whether a correct guess has been made
+    Displays remaining guesses in the game
     """
     def __init__(self, incorrect, correct, max_guesses):
+        """
+        Set default values
+        """
         self.incorrect = incorrect
         self.correct = correct
         self.max_guesses = max_guesses
 
     def add_incorrect_guess(self):
         """
-        Function to increment incorrect guesses
+        Increments incorrect guesses
         """
         self.incorrect = self.incorrect + 1
 
     def add_correct_guess(self):
         """
-        Function to set correct to true when number is guessed correctly
+        Sets correct to True when number is guessed correctly
         """
         self.correct = True
 
     def display_game(self):
         """
-        Function to display current game status
+        Display remaining guesses
         """
         print("====================")
         print("Remaining Guesses")
         print("====================")
 
+        # Loop through number of remaining guesses
         for x in range(self.max_guesses - self.incorrect):
             print("X")
 
@@ -41,7 +48,10 @@ class GameStatus:
 
 def welcome_message():
     """
-    Displays welcome message to the user
+    Displays welcome message to the player
+    Takes the players name as input
+    Display welcome to the player with their inputted name
+    Returns it for Win/Lose messaging
     """
     print("Welcome!")
     print("To play the game, choose a number between 1 and 100")
@@ -58,7 +68,8 @@ def get_player_guess():
     Displays invalid data message if not an integer
     """
     try:
-        player_guess_input = int(input("Please choose a number between 1 and 100 (or 999 to exit):\n"))
+        print("Please choose a number between 1 and 100 (or 999 to exit)")
+        player_guess_input = int(input("Enter number:\n"))
         return player_guess_input
     except ValueError:
         print("Invalid input. Your guess must be a number")
@@ -67,7 +78,7 @@ def get_player_guess():
 
 def validate_range(player_guess_to_validate):
     """
-    Check that player guess is within required range
+    Check that player guess is within the required range
     """
     if player_guess_to_validate < 1 or player_guess_to_validate > 100:
         print("Number must be between 1 and 100")
@@ -79,6 +90,8 @@ def validate_range(player_guess_to_validate):
 def validate_unique_guess(player_guess_to_validate, player_previous_guesses):
     """
     Check if the current guess is in the list of previous guesses
+    Return True if number is unique
+    Add number to list of previous guesses if unique
     """
     is_unique_guess = False
     if player_guess_to_validate in player_previous_guesses:
@@ -94,7 +107,8 @@ def validate_unique_guess(player_guess_to_validate, player_previous_guesses):
 def check_guess(player_guess_to_check, check_if_number_guessed):
     """
     Check player guess against target number and display message to the user
-    about whether their next guess should be higher or lower
+    The message states whether the target number is higher or lower
+    If the correct number is guessed sets check_if_number_guessed to True
     """
     if player_guess_to_check < target_number:
         print("Unlucky! The correct answer is Higher\n")
@@ -105,48 +119,65 @@ def check_guess(player_guess_to_check, check_if_number_guessed):
     return check_if_number_guessed
 
 
+# Declare variables
 MAX_NUM_GUESSES = 5
 player_guesses = 0
-target_number_guessed = False
+target_guessed = False
 previous_guesses = []
+# Get random number as target number for game
 target_number = random.randrange(1, 100)
+# Create instance of GameStatus
 game_status_display = GameStatus(player_guesses, False, MAX_NUM_GUESSES)
 
-
+# Call welcome_message function and set player_name to returned value
 player_name = welcome_message()
 
+# Show remaining guesses at the start of the game
 game_status_display.display_game()
 
+# Loop until MAX_NUM_GUESSES reached
 while player_guesses < MAX_NUM_GUESSES:
-    if target_number_guessed is True:
+    # Breaks loop if target number is guessed
+    if target_guessed is True:
         break
 
+    # Get player guess
     player_guess = get_player_guess()
 
+    # Breaks out of loop if player inputs "quit" number
     if player_guess == 999:
         break
 
+    # Validate guess
     GUESS_IN_RANGE = validate_range(player_guess)
     GUESS_IS_UNIQUE = validate_unique_guess(player_guess, previous_guesses)
 
+    # If the guess is valid
     if GUESS_IN_RANGE is True and GUESS_IS_UNIQUE is True:
+        # Increment player guesses
         player_guesses = player_guesses + 1
 
-        target_number_guessed = check_guess(player_guess, target_number_guessed)
+        # Check if player has guessed the correct number
+        target_guessed = check_guess(player_guess, target_guessed)
 
-        if target_number_guessed is False:
+        # Handle result of check for correct guess
+        if target_guessed is False:
             game_status_display.add_incorrect_guess()
         else:
             game_status_display.add_correct_guess()
 
+        # Display remaining guesses
         game_status_display.display_game()
 
 
+# End of Game
 print("====================")
 print("===  GAME OVER!  ===")
 print("====================")
-if target_number_guessed is True:
+# Display appropriate Win/Lose message
+if target_guessed is True:
     print(f"Congratulations {player_name}, you win!")
 else:
     print(f"You lose {player_name}!")
+# Display the target number
 print(f"The correct number was {target_number}")
