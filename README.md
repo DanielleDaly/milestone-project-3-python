@@ -56,9 +56,9 @@ View the live project here: (**INSERT LIVE LINK HERE**)
 
 - When a user enters their guess, a message is displayed to the user stating whether the correct answer is higher or lower than their guess. This gives the user a hint they can use in choosing what their next guess might be.  
 
-The messages are:
-- "Unlucky! The correct answer is Higher"
-- "Unlucky! The correct answer is Lower"
+- The messages are:
+    - "Unlucky! The correct answer is Higher"
+    - "Unlucky! The correct answer is Lower"
 
 ### As a user I would like to know when the game is over and what the correct number was
 
@@ -68,7 +68,7 @@ The messages are:
 
 ### Welcome Message and Game Explanation
 
-- An initial welcome message is displayed to the user. This welcomes the user to the game and below the user is given a brief discription of how to play the game. The user must try to guess a target number between 1 and 100. The user has a maximum number of 5 guesses in which to guess the correct answer. 
+- An initial welcome message is displayed to the user. This welcomes the user to the game and below the user is given a brief description of how to play the game. The user must try to guess a target number between 1 and 100. The user has a maximum number of 5 guesses in which to guess the correct answer. 
 
     - Welcome message displayed: 
 
@@ -76,7 +76,7 @@ The messages are:
     - To play the game, choose a number between 1 and 100
     - You have 5 chances to guess the target number"
 
-Screenshot of the Welcome Message displayed in the terminal
+Screenshot of the Welcome Message displayed in the terminal:
 
 <h3 align="center"><img src="readme-images/screenshot-welcome-message.png"></h3>
 
@@ -86,11 +86,13 @@ Below the welcome message a prompt is displayed for the user to enter a name. Th
 
 If the user does not want to enter a name they can still proceed to playing the game. By pressing enter, they can begin the game.
 
-Screenshot of user's name displayed
+Screenshot of user's name displayed:
+
+<h3 align="center"><img src="readme-images/screenshot-display-name.png"></h3>
+
+Screenshot of terminal if user's name was not entered:
 
 <h3 align="center"><img src="readme-images/screenshot-name-blank.png"></h3>
-
-Screenshot if user's name was not entered
 
 ### Python Random Library
 
@@ -104,93 +106,103 @@ Screenshot if user's name was not entered
  
 ### Input validation and error checking
 
-**Validation for checking user input is an integer**
-
 - Once a guess has been entered by the user it is validated. There are a number of checks to ensure that the correct information has been entered.
 
+**Validation for checking if the user input is an integer**
+
 - The input is checked to ensure that an integer is chosen. If the user enters a guess that is not an integer this guess is not accepted and an error message will display. This entry will not count towards the users 5 guesses. 
-    - Error message displayed: "Invalid input. Your guess must be a number"
 
-Screen shot of error message when user enters a number with a decimal point
+    - Error message displayed: "Invalid input. Your guess must be a whole number"
 
-<h3 align="center"><img src="readme-images/screenshot-validation-integer.png"></h3>
+Screen shot of error message when user enters a number with a decimal point:
 
-Screen shot of error message when user enters a number with a string
+<h3 align="center"><img src="readme-images/screenshot-validation-decimal.png"></h3>
+
+Screen shot of error message when user enters a number with a string:
+
 <h3 align="center"><img src="readme-images/screenshot-validation-string.png"></h3>
 
-Screen shot of error message when user enters a number with a negative number
+Screen shot of error message when user enters a number with a negative number:
+
 <h3 align="center"><img src="readme-images/screenshot-validation-negative.png"></h3>
 
 **Validation to check if the user input is within the specified range**
 
-- The input is also validated to ensure that the user does not enter a number that falls outside the range. The range for this game is between 1 and 100. If the user inputs a number outside of this range, an error message will display. This entry will not count towards the users 5 guesses. 
+- The input is also validated to ensure that the user does not enter a number that falls outside the specified range. The range for this game is between 1 and 100. If the user inputs a number outside of this range, an error message will display. This entry will not count towards the users 5 guesses. 
 
-- Error message: ""
+- Error message: "The number you entered was outside the range 1 to 100"
 
-Screen shot below of user attempting to enter a number above the maximum number 100
-(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+Screen shot of error message when user enters a number above the maximum number in range (100):
 
-Screen shot below of user attempting to enter a number below the minimum number 1
-(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+<h3 align="center"><img src="readme-images/screenshot-validation-range-above.png"></h3>
+
+Screen shot of error message when user enters a number below the minimum number in range (1):
+<h3 align="center"><img src="readme-images/screenshot-validation-negative.png"></h3>
 
 **Validation for an empty input**
 
 - If the user presses the enter key without inputting any data, an error message will display. This entry will not count towards the users 5 guesses. 
 
- Error message: ""
+ Error message: "Invalid input. Your guess must be a whole number"
 
-Screen shot below of user making a guess with empty input
-(**INSERT SCREEN SHOT OF ERROR MESSAGE**)
+Screen shot of error message when user does not enter any number:
+<h3 align="center"><img src="readme-images/screenshot-validation-empty-input.png"></h3>
 
 
 ### Display Hints for Incorrect Guesses - Higher or Lower
 
 - Once a user has made a guess it will be checked against the target number. If the user guess is lower than the target number, a message will be displayed to advise the user that their guess was too low so that they will know that they should choose a number with a higher value when making their next guess. 
 
-- Message displayed if guess is lower than the target number: ""
+- Message displayed if user's guess is lower than the target number: "Unlucky! The correct answer is Lower"
 
-Screenshot of message in the terminal when user guess is lower than the target number
-(**INSERT SCREEN SHOT OF MESSAGE - TOO low**)
+Screenshot of message in the terminal when user's guess is lower than the target number:
+
+<h3 align="center"><img src="readme-images/screenshot-message-too-low.png"></h3>
 
 - If the user guess is higher than the target number, a message will be displayed to advise the user that their guess was too high so that they will know that they should choose a number with a lower value when making their next guess.
 
-- Message displayed if guess is higher than the target number: ""
+- Message displayed if guess the target number is higher than the user's guess: "Unlucky! The correct answer is Higher:
 
-Screenshot of message in the terminal when user guess is higher than the target number
-(**INSERT SCREEN SHOT OF MESSAGE - TOO HIGH**)
+Screenshot of message in the terminal when user's guess is higher than the target number:
+
+<h3 align="center"><img src="readme-images/screenshot-message-too-high.png"></h3>
 
 
 ### Display Remaining Guesses
 
-- In each game the user can make 5 guesses to try to guess the correct number. These are displayed on screen with an 'X'. For example, if there are 3 remaining guesses, 3 x's will be displayed on the screen.  As each guess is taken, the number of remaining guesses will decrease. Text is displayed above advising that the x's represent remaining guesses.
-(**INSERT SCREEN SHOT OF MESSAGE - REMAINING GUESSES REPRESENTED BY X**)
+- In each game the user can make 5 guesses to try to guess the correct number. These are displayed on screen and represented visually with an 'X'. For example, if there are three remaining guesses then three X's will be displayed on the screen. As each guess is taken, the number of remaining guesses will decrease. Text is displayed above advising that the X's represent remaining guesses.
 
+Screenshot is remainicng guesses displayed on screen:
+
+<h3 align="center"><img src="readme-images/screenshot-remaining-guesses.png"></h3>
 
 ### Winning/ Losing Message
 
-
-Once the user inputs a guess, the guess is checked to see if this guess matches the target guess. 
+- Once the user inputs a guess, the guess is checked to see if it matches the target guess. 
 
 - If the guess is correct a winning message is displayed on the screen. This message advises the user that they have won. It displays the username that was entered by the user at the beginning and confirms what the correct number was. 
 
+Example of Winning Message: "Congratulations Dani, you win! The correct number was 98"
 
-Winning Message:""
+Screenshot of You Win message:
 
-(**INSERT SCREENSHOT OF WINNING MESSAGE**)
+<h3 align="center"><img src="readme-images/screenshot-you-win.png"></h3>
 
-- If the user has not guessed the correct answer after 5 guesses they lose the game. A message is displayed to advise the user that they have lost the game. It displays the username that was entered by the user at the beginning and confirms what the correct number was. 
+Screenshot of winning message:
 
-Losing Message:""
+<h3 align="center"><img src="readme-images/screenshot-winning-message.png"></h3>
 
-(**INSERT SCREENSHOT OF LOSING MESSAGE**)
+- If the user has not guessed the correct answer after 5 guesses they lose the game. A message is displayed to advise the user that the game is over abd they have lost the game. It displays the username that was entered by the user at the beginning and confirms what the correct number was. 
 
-### Game Over Message
+Example of Losing Message: "Oh no! Sorry Dan, you have lost the game. The correct number was 57"
 
-- If the user has entered 5 incorrect guesses, they lose the game. Once the game has been lost a game over message is displayed. 
+Screenshot of Game Over message:
 
-Game Over Message: ""
+<h3 align="center"><img src="readme-images/screenshot-game-over.png"></h3>
 
-(**INSERT SCREENSHOT OF GAME OVER MESSAGE**)
+Screenshot of Losing Message:
+
+<h3 align="center"><img src="readme-images/screenshot-losing-message.png"></h3>
 
 ### Data Maintained in Class Instances
 

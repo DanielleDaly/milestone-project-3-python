@@ -84,7 +84,7 @@ def validate_range(player_guess_to_validate):
     """
     if player_guess_to_validate < 1 or player_guess_to_validate > 100:
         # Only show the error message if the number is not 422
-        # 422 is the number as the Invalid Data return when getting the player's guess
+        # 422: Invalid Data return when getting the player's guess
         if player_guess_to_validate != 422:
             print("The number you entered was outside the range 1 to 100\n")
 
@@ -178,13 +178,16 @@ while player_guesses < MAX_NUM_GUESSES:
 
 
 # End of Game
-print("====================")
-print("===  GAME OVER!  ===")
-print("====================")
 # Display appropriate Win/Lose message
 if target_guessed is True:
+    print("====================")
+    print("===   YOU WIN!   ===")
+    print("====================")
     print(f"Congratulations {player_name}, you win!")
 else:
+    print("====================")
+    print("===  GAME OVER!  ===")
+    print("====================")
     print(f"Oh no! Sorry {player_name}, you have lost the game!")
 # Display the target number
 print(f"The correct number was {target_number}")
