@@ -53,12 +53,14 @@ def welcome_message():
     Display welcome to the player with their inputted name
     Returns it for Win/Lose messaging
     """
+    print("======================================================")
     print("Welcome!")
     print("To play the game, choose a number between 1 and 100")
-    print("You have 5 chances to guess the target number\n")
+    print("You have 5 chances to guess the target number")
+    print("======================================================\n")
 
     inputted_player_name = input("Please enter your name:\n")
-    print(f"Hi {inputted_player_name}, let's play the game!")
+    print(f"Hi {inputted_player_name}, let's play the game!\n")
     return inputted_player_name
 
 
@@ -72,8 +74,8 @@ def get_player_guess():
         player_guess_input = int(input("Enter number:\n"))
         return player_guess_input
     except ValueError:
-        print("Invalid input. Your guess must be a number")
-        return 0
+        print("Invalid input. Your guess must be a whole number\n")
+        return 422
 
 
 def validate_range(player_guess_to_validate):
@@ -81,7 +83,11 @@ def validate_range(player_guess_to_validate):
     Check that player guess is within the required range
     """
     if player_guess_to_validate < 1 or player_guess_to_validate > 100:
-        print("Number must be between 1 and 100")
+        # Only show the error message if the number is not 422
+        # 422 is the number as the Invalid Data return when getting the player's guess
+        if player_guess_to_validate != 422:
+            print("The number you entered was outside the range 1 to 100\n")
+
         return False
     else:
         return True
@@ -99,8 +105,9 @@ def validate_unique_guess(player_guess_to_validate, player_previous_guesses):
         print(f"Your previous guesses were: {player_previous_guesses}")
         print("Please try again\n")
     else:
-        player_previous_guesses.append(player_guess_to_validate)
-        is_unique_guess = True
+        if player_guess_to_validate != 422:
+            player_previous_guesses.append(player_guess_to_validate)
+            is_unique_guess = True
     return is_unique_guess
 
 
@@ -178,6 +185,6 @@ print("====================")
 if target_guessed is True:
     print(f"Congratulations {player_name}, you win!")
 else:
-    print(f"You lose {player_name}!")
+    print(f"Oh no! Sorry {player_name}, you have lost the game!")
 # Display the target number
 print(f"The correct number was {target_number}")
