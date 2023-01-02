@@ -243,6 +243,11 @@ In future I would like to add some additional features to this game:
 
     - Gitpod was used to code the project and create my files.
 
+### Languages Used:
+
+- Python
+
+    - This game has been created using the Python programming language
 
 
 ## Testing:
