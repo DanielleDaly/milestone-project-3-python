@@ -109,11 +109,6 @@ View the live project here:
 <h3 align="center"><img src="readme-images/screenshot-name-blank.png"></h3>
 
 
-### Python Random Library
-
-- The Python random library is imported and used to generate the target number that the user tries to guess
-
-
 ### Accept User Input
 
 - The application allows the user to enter a number which will be used as their guess. They can enter up to 5 guesses. If after 5 guesses they have not chosen the correct number they lose the game. 
@@ -164,6 +159,17 @@ View the live project here:
     **Screen shot of error message when user does not enter any number:**
     <h3 align="center"><img src="readme-images/screenshot-validation-empty-input.png"></h3>
 
+
+- #### Validation to check if the user has guessed the same number more than once
+
+    - If the user enters a number that they have already used for a previous guess, an eror message will display. This entry will not count towards the users 5 guesses.
+
+    - The users previous guesses made during the game are also displayed. 
+
+    - Example of error message: "50, Guess already in list of previous guesses Your previous guesses were: [50, 75, 60] Please try again"
+
+    **Screen shot of error message when user enters the same number more than once:**
+    <h3 align="center"><img src="readme-images/screenshot-validation-same-guess.png"></h3
 
 ### Display Hints for Incorrect Guesses - Higher or Lower
 
