@@ -260,22 +260,20 @@ In future I would like to add some additional features to this game:
 ### Functionality & Features
 
 - I played the game numerous times and confirmed that the game runs correctly.
-
-- I confirmed that the number of guesses increments correctly.
+- I confirmed that the welcome message displays correctly.
+- I confirmed that the user's name is displayed as entered. 
 
 - I confirmed that the numeber of remaining guesses decreases correctly.
 
 - I confirmed that the number of guesses remaining displays on the screen.
 
-- I confirmed that the welcome message displays correctly.
-
-- I confirmed that the user's name is displayed as entered. 
- 
 - I confirmed that the game ends after 5 incorrect guesses. 
 
 - I confirmed incorrectly entered input is not counted as part of the users 5 guesses. 
 
-- I confirmed that a message displays after each user guess to confirm if their guess was too high or too low when compared to the target number. 
+- I confimed the user validation works correctly.
+
+- I confirmed that a message displays after each user guess to confirm if the target number is higher or lower than the user's guess.
 
 - I confirmed the winning message displays correctly.
 
@@ -289,19 +287,40 @@ In future I would like to add some additional features to this game:
 
 (**ENTER SCREENSHOT OF PEP8**)
 
-## Bugs
-
-### Solved bugs
+## Bug Fixes
 
 The following bugs were found when testing:
 
-Is true vs == true
-- 
-- 
+- Return 0 from get_player_guess function when guess is not an integer
 
-Return 0 when player guess is not an integer
-- 
-- 
+    - During development, I carried out testing to validate the user input for the guess. In order to be able to check that the guess was a number within the range 1 to 100, it was necessary to validate that the input was an integer.
+    If the user entered anything other than an integer, nothing was being returned and therefore the subsequent check that the number was within the 1 to 100 range was breaking.
+    To enable the check that the number is in range, I set the returned value in the error state to be 0, a number outside of the range of 1 to 100.
+
+    - Bug Fix Commit: 
+
+        - https://github.com/DanielleDaly/milestone-project-3-python/commit/b36b14db3291583a9d215e608ae1246bf2c6a106
+
+- Update handling of guesses outside 1 to 100 range
+
+    - During testing I noticed that using 0 as the default return when the user entered a non-integer was resulting in some display messages not being shown. This was occurring for negative and decimal numbers.
+    I made a decision that using a more appropriate error code would work better here. The decision made was to use 422 as the returned number. I chose this number for the following reasons.
+
+        - It is the HTTP Response Code for an [Unprocessable Entity](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422), which is generally used when the data sent in a HTTP request is not of an incorrect content type, but it is not possible to process the data.
+
+        - It is a number outside thee range of 1 to 100 and was unlikely to be entered as a guess by the user.
+    
+    - Bug Fix Commit:
+
+        - https://github.com/DanielleDaly/milestone-project-3-python/commit/fdbdc3063191661553d299c217a99acc861b969c
+
+- Change '==' to 'is' in guess_in_range if statement
+
+    - When I checked the linter for the guess_in_range function I noticed a warning about the use of '==' in the if statement for the comparison against 'True'. The recommendation was to change this to use the 'is' keyword instead. 
+
+    - Bug Fix Commit:
+
+        - https://github.com/DanielleDaly/milestone-project-3-python/commit/5a5605a244dd9b6eef0874d25fd6203d8bf9af78
 
 ### Unfixed Bugs
 
