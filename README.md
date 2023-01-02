@@ -221,6 +221,29 @@ In future I would like to add some additional features to this game:
 
 3. I would also like to add the option for the user to restart the game immediately after finishing a game without having to run the program again. With the way the game is currently coded, it would require a restructure of the existing code to move all of the game functionality within a class and a new instance of the class would be called to re-start the game.
 
+### Technologies Used
+
+- Lucidchart
+
+    - Lucidchart was used to create a Flow Chart used to visually represent the game data flow and was used in the planning stages of this project.
+
+- Am I responsive
+
+    - Am I responsive was used to take screenshots of the page.
+
+- Heroku 
+
+    - Heroku was used to deploy this project.
+
+- Github
+
+    - Github was used to create and store the project repository.
+
+- Gitpod
+
+    - Gitpod was used to code the project and create my files.
+
+
 
 ## Testing:
 
