@@ -308,7 +308,12 @@ In future I would like to add some additional features to this game:
 
 ### Validator Testing
 
-- I tested my Python code in PEP8online.com and no errors were returned. 
+- I tested my Python code in VSCode using the `pycodestyle` linter and no errors were returned. This is the PEP8 linter as recommended on the VSCode Python Linting extensions page (https://code.visualstudio.com/docs/python/linting).
+
+- The pep8online.com validator was not available at the time of testing.
+
+    **Screenshot of Python Validator in VSCode showing pycodestyle linter and no problems in the output after linting:**
+    <h3 align="center"><img src="readme-images/screenshot-python-validator.png"></h3>
 
 
 ## Bug Fixes
