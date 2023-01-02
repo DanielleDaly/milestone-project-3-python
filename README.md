@@ -64,6 +64,13 @@ View the live project here: (**INSERT LIVE LINK HERE**)
 
 - Once the user has made 5 incorrect guesses the game will end. A "GAME OVER!" message is displayed on the screen. A message is also displyed to the user, including their name which includes what the correct number was. 
 
+## Flow Chart - Game Data Flow
+
+- I have created a flow chart using Lucidchart.com. I used this in planning my project to represent the game data flow. 
+
+**Screenshot of Game Data Flow:**
+<h3 align="center"><img src="readme-images/game-data-flow.png"></h3>
+
 ## Existing Features
 
 ### Welcome Message and Game Explanation
