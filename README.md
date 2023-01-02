@@ -243,12 +243,17 @@ In future I would like to add some additional features to this game:
 
     - Gitpod was used to code the project and create my files.
 
-### Languages Used:
+### Languages Used
 
 - Python
 
     - This game has been created using the Python programming language
 
+### Libraries Used
+
+- import random
+
+    - I used the import random library in Python to generate a random number that was used in the game as the target number the user must try to guess. 
 
 ## Testing:
 
