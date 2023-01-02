@@ -77,14 +77,13 @@ View the live project here: (**INSERT LIVE LINK HERE**)
 
 - An initial welcome message is displayed to the user. This welcomes the user to the game and below the user is given a brief description of how to play the game. The user must try to guess a target number between 1 and 100. The user has a maximum number of 5 guesses in which to guess the correct answer. 
 
-    - Welcome message displayed: 
+    - **Welcome message displayed:** 
 
     - "Welcome!
     - To play the game, choose a number between 1 and 100
     - You have 5 chances to guess the target number"
 
-Screenshot of the Welcome Message displayed in the terminal:
-
+**Screenshot of the Welcome Message displayed in the terminal:**
 <h3 align="center"><img src="readme-images/screenshot-welcome-message.png"></h3>
 
 ### Allow User to enter Username
@@ -93,12 +92,10 @@ Below the welcome message a prompt is displayed for the user to enter a name. Th
 
 If the user does not want to enter a name they can still proceed to playing the game. By pressing enter, they can begin the game.
 
-Screenshot of user's name displayed:
-
+**Screenshot of user's name displayed:**
 <h3 align="center"><img src="readme-images/screenshot-display-name.png"></h3>
 
-Screenshot of terminal if user's name was not entered:
-
+**Screenshot of terminal if user's name was not entered:**
 <h3 align="center"><img src="readme-images/screenshot-name-blank.png"></h3>
 
 ### Python Random Library
@@ -121,16 +118,13 @@ Screenshot of terminal if user's name was not entered:
 
     - Error message displayed: "Invalid input. Your guess must be a whole number"
 
-Screen shot of error message when user enters a number with a decimal point:
-
+**Screen shot of error message when user enters a number with a decimal point:**
 <h3 align="center"><img src="readme-images/screenshot-validation-decimal.png"></h3>
 
-Screen shot of error message when user enters a number with a string:
-
+**Screen shot of error message when user enters a number with a string:**
 <h3 align="center"><img src="readme-images/screenshot-validation-string.png"></h3>
 
-Screen shot of error message when user enters a number with a negative number:
-
+**Screen shot of error message when user enters a number with a negative number:**
 <h3 align="center"><img src="readme-images/screenshot-validation-negative.png"></h3>
 
 **Validation to check if the user input is within the specified range**
@@ -139,11 +133,10 @@ Screen shot of error message when user enters a number with a negative number:
 
 - Error message: "The number you entered was outside the range 1 to 100"
 
-Screen shot of error message when user enters a number above the maximum number in range (100):
-
+**Screen shot of error message when user enters a number above the maximum number in range (100):**
 <h3 align="center"><img src="readme-images/screenshot-validation-range-above.png"></h3>
 
-Screen shot of error message when user enters a number below the minimum number in range (1):
+**Screen shot of error message when user enters a number below the minimum number in range (1):**
 <h3 align="center"><img src="readme-images/screenshot-validation-negative.png"></h3>
 
 **Validation for an empty input**
@@ -152,9 +145,8 @@ Screen shot of error message when user enters a number below the minimum number 
 
  Error message: "Invalid input. Your guess must be a whole number"
 
-Screen shot of error message when user does not enter any number:
+**Screen shot of error message when user does not enter any number:**
 <h3 align="center"><img src="readme-images/screenshot-validation-empty-input.png"></h3>
-
 
 ### Display Hints for Incorrect Guesses - Higher or Lower
 
@@ -162,26 +154,33 @@ Screen shot of error message when user does not enter any number:
 
 - Message displayed if user's guess is lower than the target number: "Unlucky! The correct answer is Lower"
 
-Screenshot of message in the terminal when user's guess is lower than the target number:
-
+**Screenshot of message in the terminal when user's guess is lower than the target number:**
 <h3 align="center"><img src="readme-images/screenshot-message-too-low.png"></h3>
 
 - If the user guess is higher than the target number, a message will be displayed to advise the user that their guess was too high so that they will know that they should choose a number with a lower value when making their next guess.
 
 - Message displayed if guess the target number is higher than the user's guess: "Unlucky! The correct answer is Higher:
 
-Screenshot of message in the terminal when user's guess is higher than the target number:
-
+**Screenshot of message in the terminal when user's guess is higher than the target number:**
 <h3 align="center"><img src="readme-images/screenshot-message-too-high.png"></h3>
-
 
 ### Display Remaining Guesses
 
 - In each game the user can make 5 guesses to try to guess the correct number. These are displayed on screen and represented visually with an 'X'. For example, if there are three remaining guesses then three X's will be displayed on the screen. As each guess is taken, the number of remaining guesses will decrease. Text is displayed above advising that the X's represent remaining guesses.
 
-Screenshot is remainicng guesses displayed on screen:
-
+**Screenshot is remainicng guesses displayed on screen:**
 <h3 align="center"><img src="readme-images/screenshot-remaining-guesses.png"></h3>
+
+### Exit Game Option
+
+- Once the game has started the user can exit the game at any point. to do this, they must enter the number 999. When the user types in the keys 999, the game ends and "GAME OVER!" is displayed on screen. The user is also advised of what the target number was for the game. 
+
+**Screen shot of exit information displayed during the game:**
+<h3 align="center"><img src="readme-images/screenshot-exit-info.png"></h3>
+
+**Screenshot of "GAME OVER" message once user has exited the game:**
+<h3 align="center"><img src="readme-images/screenshot-exit-game-over.png"></h3>
+
 
 ### Winning/ Losing Message
 
@@ -191,24 +190,20 @@ Screenshot is remainicng guesses displayed on screen:
 
 Example of Winning Message: "Congratulations Dani, you win! The correct number was 98"
 
-Screenshot of You Win message:
-
+**Screenshot of You Win message:**
 <h3 align="center"><img src="readme-images/screenshot-you-win.png"></h3>
 
-Screenshot of winning message:
-
+**Screenshot of winning message:**
 <h3 align="center"><img src="readme-images/screenshot-winning-message.png"></h3>
 
 - If the user has not guessed the correct answer after 5 guesses they lose the game. A message is displayed to advise the user that the game is over abd they have lost the game. It displays the username that was entered by the user at the beginning and confirms what the correct number was. 
 
 Example of Losing Message: "Oh no! Sorry Dan, you have lost the game. The correct number was 57"
 
-Screenshot of Game Over message:
-
+**Screenshot of Game Over message:**
 <h3 align="center"><img src="readme-images/screenshot-game-over.png"></h3>
 
-Screenshot of Losing Message:
-
+**Screenshot of Losing Message:**
 <h3 align="center"><img src="readme-images/screenshot-losing-message.png"></h3>
 
 ### Data Maintained in Class Instances
