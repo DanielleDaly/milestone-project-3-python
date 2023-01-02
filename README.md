@@ -231,11 +231,6 @@ If the user's guess is lower than the target number, a message will be displayed
     <h3 align="center"><img src="readme-images/screenshot-losing-message.png"></h3>
 
 
-### Data Maintained in Class Instances
-
-- The game status is maintained within a GameStatus class and by calling the functions within the class the status of the game is maintained and displayed to the user.
-
-
 ## Future Features
 
 In future I would like to add some additional features to this game:
@@ -245,6 +240,14 @@ In future I would like to add some additional features to this game:
 - I would also like to give the user the option as to whether they would like hints to be included when playing the game. Currently hints are displayed and it is not possible to opt out. I would like to add this in as a feature in future which would make the number guessing game more challenging. 
 
 - I would also like to add the option for the user to restart the game immediately after finishing a game without having to run the program again. With the way the game is currently coded, it would require a restructure of the existing code to move all of the game functionality within a class and a new instance of the class would be called to re-start the game.
+
+### Data Model
+
+- I have used a GameStatus as my Data Model. The game creates an instance of the GameStatus data model to hold the number of incorrect guesses made by the player and facilitates the display of remaining guesses to the player.
+
+- The GameStatus class stores the number of incorrect guesses, if a correct guess has been made and the maximum number of guesses.
+
+- The class has three methods to help play the game, which are `add_incorrect_guess` which is used to calculate the number of remaining guesses to display, `add_correct_guess`, which is used to store whether the correct number has been guessed, and `display_game`, which prints the remaining number of guesses to the terminal in a user-friendly way.
 
 
 ### Technologies Used
