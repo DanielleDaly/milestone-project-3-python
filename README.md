@@ -9,6 +9,9 @@ The main function of this game is to provide the user with a simple number guess
 ### View the live project here: https://ci-numbers-guessing-game.herokuapp.com/
 
 
+<h3 align="center"><img src="readme-images/screenshot-amiresponsive.png"></h3>
+
+
 ## How to play the Game
 
 - The game will prompt the user to enter a number between 1 and 100.
@@ -204,7 +207,7 @@ If the user's guess is lower than the target number, a message will be displayed
 <h3 align="center"><img src="readme-images/screenshot-exit-info.png"></h3>
 
 **Screenshot of "GAME OVER" message once user has exited the game:**
-<h3 align="center"><img src="readme-images/screenshot-exit-game-over.png"></h3>
+<h3 align="center"><img src="readme-images/screenshot-game-over.png"></h3>
 
 
 ### Winning Message
@@ -320,6 +323,11 @@ In future I would like to add some additional features to this game:
 
     **Screenshot of Python Validator in VSCode showing pycodestyle linter and no problems in the output after linting:**
     <h3 align="center"><img src="readme-images/screenshot-python-validator.png"></h3>
+
+- I also tested my code in Code Institue's PEP8 Validator https://pep8ci.herokuapp.com/ and no errors were returned.
+
+    **Screenshot of Code Institue's PEP8 Validator**
+    <h3 align="center"><img src="readme-images/screenshot-pep8ci-herokuapp.png"></h3>
 
 
 ## Bug Fixes
