@@ -331,95 +331,113 @@ There are no remaining unfixed Bugs
 ### Github, Gitpod, Git and Heroku
 
 ### Github and Gitpod
+
 - I used Github and Gitpod to begin creating this number guessing game.
+
 - I used the Code Institute Template in Github.
 
-**ADD SCREENSHOT FOR CODE INSTITURE TEMPLATE**
+- After I located the correct template, I clicked on the use this template button.
 
-After I located the correct template, I clicked on the use this template button.
+- I named the repository "milestone-project-3-python" and created the repository.
 
-**ADD SCREENSHOT**
+- Once the repository was created I opened it on Gitpod.
 
-I named the repository "milestone-project-3-python" and created the repository.
-
-**ADD SCREENSHOT**
-
-Once the repository was created I opened it on Gitpod.
-
-I used the terminal to start coding.
+- I used the terminal to start coding.
 
 ### Git
 
-I used git to save my progress throughout this project. 
+- I used git to save my progress throughout this project. 
 
-After I completed each section, I used git add command to add any changes that I had made.
+- After I completed each section, I used git add command to add any changes that I had made.
 
-**ADD SCREENSHOT**
+- I then used the git commit command to commit these changes.
 
-I then used the git commit command to commit these changes.
-
-**ADD SCREENSHOT**
-
-These were pushed to Github using git push command.
-
-
-**ADD SCREENSHOT**
+- These were pushed to Github using git push command.
 
 
 ### Heroku
 
 The project was deployed using the Code Insitute's mock terminal for Heroku.
 
-**Steps for Deployment:**
+#### Steps for Deployment:
 
-- Fork or clone this repository
-- Create a new Heroku App
-- Set the buildbacks to Python and Nodejs in that order
-- Link the Heroku app to the repository
-- Click on Deploy
+    - Fork or clone this repository
 
-**Create a new Heroku App**
+    - Create a new Heroku App
+
+    - Set the buildbacks to Python and Nodejs in that order
+
+    - Link the Heroku app to the repository
+
+    - Click on Deploy
+
+#### Create a new Heroku App
 
 Sign in to Heroku.com and followed the below steps:
 
-- On the Heroku app, click the "Create New App" button
-- Enter the name of your project under "App Name". Each app name must be unique
-- Select your region in the space provided under "Choose a region". I selected Europe
-- Click the "Create App" button
+    - On the Heroku app, click the "Create New App" button
 
-(**ADD SCREENSHOT**)
+    - Enter the name of your project under "App Name". Each app name must be unique
 
-**Set the buildbacks to Python and Nodejs**
-- Once you click on the "Create App" button you will be brought to another page to set up the app.
-- Click on the "Settings" tab at the top of the page
-- Scroll down to the "Buildpacks" section
-- Click the "Add buildpack" button
-- Select "Python" and click on the "Save changes" button
-- Select "nodejs" and click on the "Save changes" button
-- Make sure the buildpacks are entered in the correct order with Python first and nodejs second. Click and drag them to change the order if required
+    - Select your region in the space provided under "Choose a region". I selected Europe
 
-**Link the Heroku app to the repository**
-- Click the connect to github buttton.
-- Add project repository name
-- Search for repository
-- Once located click on the connect button
-- Click the setting button
-- Click on the reveal config variables button
-- Add your config variable key values to this section
+    - Click the "Create App" button
 
-**Click on Deploy**
+#### Set the buildbacks to Python and Nodejs
 
-- Click on the "Deploy" tab at the top of the page 
-- Scroll down to the "Deployment method" section
-- Click on "Github"
-- Search for repository by entering the repository name and clicking on the - - - "Search" button
-- Click on the "connect" button to link the Heroku app to the Github repository code
-- Click on "Manual deploy"
-- Under "Choose a branch to deploy" ensure it is set to master and click on the "Deploy Branch" button
-- Once the message "Your app was successfully deployed" appears click on the "View" button
+    - Once you click on the "Create App" button you will be brought to another page to set up the app.
+
+    - Click on the "Settings" tab at the top of the page
+
+    - Scroll down to the "Buildpacks" section
+
+    - Click the "Add buildpack" button
+
+    - Select "Python" and click on the "Save changes" button
+
+    - Select "nodejs" and click on the "Save changes" button
+
+    - Make sure the buildpacks are entered in the correct order with Python first and nodejs second. Click and drag them to change the order if required
+
+#### Link the Heroku app to the repository
+
+    - Click the connect to github buttton
+
+    - Add project repository name
+
+    - Search for repository
+
+    - Once located click on the connect button
+
+    - Click the setting button
+
+    - Click on the reveal config variables button
+
+    - Add your config variable key values to this section
+
+#### Click on Deploy
+
+    - Click on the "Deploy" tab at the top of the page 
+
+    - Scroll down to the "Deployment method" section
+
+    - Click on "Github"
+
+    - Search for repository by entering the repository name and clicking on the "Search" button
+
+    - Click on the "connect" button to link the Heroku app to the Github repository code
+
+    - Click on "Automatic deploy"
+
+    - Once the message "Your app was successfully deployed" appears click on the "View" button
 
 ## Credits
 
-- Code Institute for the deployment terminal
+- Code Institute:
+    - I used the Code Institute's Python Template in Giyhub to complete my project. 
+
+    - I used the Code Institute's mock terminal on Heroku to deploy my project
+
+- Code: All code was written by myself
 
 
